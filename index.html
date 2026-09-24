@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#146c63">
+  <meta name="description" content="薬局の待ち時間を、近くの町を楽しむ時間に変えるアプリ">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+  <title>まち時間 Pharmacy</title>
+</head>
+<body>
+  <main class="shell">
+    <section class="view active" id="home-view">
+      <header class="top"><p>お薬できあがり案内</p><h1>まち時間 <span>患者さん用</span></h1></header>
+      <p class="lead">お薬を待つ時間を、ちょっといい町時間に。</p>
+      <button class="link-card" data-route="spots"><strong>近くのおすすめ一覧</strong><small>店舗ごとに見る</small><b>›</b></button>
+      <nav class="guide-nav" aria-label="お薬と健康のガイド">
+        <button data-route="quiz"><strong>お薬クイズ</strong><small>楽しく学べる100問</small><b>›</b></button>
+        <button data-route="labs"><strong>検査値ガイド</strong><small>高い・低いの意味</small><b>›</b></button>
+      </nav>
+      <section class="number-card">
+        <label for="ticket">受付番号</label>
+        <div class="number-row"><input id="ticket" inputmode="numeric" maxlength="6" placeholder="6桁の番号" aria-label="受付番号"><button id="check-ticket">確認する</button></div>
+        <h2>受付票の番号を入力</h2><p>できあがり状況と、今から立ち寄れる場所が分かります。</p>
+        <div class="result" id="ticket-result" aria-live="polite"></div>
+      </section>
+    </section>
+
+    <section class="view" id="spots-view">
+      <button class="back" data-route="home">← 受付確認へ戻る</button><p class="eyebrow">LOCAL PICKS</p><h1>近くのおすすめ</h1><p class="lead">薬局の近くで、ちょっといい時間を。</p>
+      <label class="field-label" for="store-select">どの店舗の近く？</label>
+      <select id="store-select"><option value="">店舗を選択</option><option>ダリア調剤薬局</option><option>レモン調剤薬局</option><option>パンジー調剤薬局</option></select>
+      <div id="spot-list" class="spot-list"><div class="empty">店舗を選ぶと、周辺のおすすめが表示されます。</div></div>
+    </section>
+
+    <section class="view" id="quiz-view">
+      <button class="back" data-route="home">← ホーム</button><div class="pill">全100問</div><div class="hero-icon">💊</div><p class="eyebrow">PHARMACY LESSON</p><h1>お薬クイズ100</h1><p class="lead">1回10問。基礎から、迷いやすい実践問題まで。</p>
+      <p class="notice">✓ 厚労省・PMDAなどの公的資料を参照</p><div id="quiz-start"><h2>挑戦する分野を選んでね</h2><p>「ぜんぶ」では100問からランダムに10問を出題します。</p><div class="chips" id="quiz-categories"></div><button class="primary" id="start-quiz">10問に挑戦する</button></div><div id="quiz-play" hidden></div>
+      <aside><strong>このクイズについて</strong><p>一般的な啓発情報です。実際のお薬は、薬袋・説明書・医師・薬剤師からの指示を優先してください。</p></aside>
+    </section>
+
+    <section class="view" id="labs-view">
+      <button class="back" data-route="home">← 受付状況に戻る</button><div class="pill">2026年確認</div><div class="hero-icon">🩺</div><p class="eyebrow">LAB RESULTS GUIDE</p><h1>検査値 かんたんガイド</h1><p class="lead">この数字、なんのこと？ 健診でよく見る項目をやさしく解説します。</p>
+      <aside><strong>まず知っておきたいこと</strong><p>数値は成人の一般的な目安です。基準範囲は検査機関・測定法・年齢・性別などで異なるため、手元の結果票を優先してください。</p></aside>
+      <div class="search"><input id="lab-search" type="search" placeholder="検査項目を探す" aria-label="検査項目を探す"><div class="chips" id="lab-categories"></div></div><p><strong id="lab-count"></strong>項目</p><div id="lab-list" class="lab-list"></div>
+    </section>
+  </main>
+  <footer>まち時間 Pharmacy</footer><script src="app.js"></script>
+</body>
+</html>
