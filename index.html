@@ -8,6 +8,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="lab-details.css">
   <title>まち時間 Pharmacy</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
       <p class="lead">お薬を待つ時間を、ちょっといい町時間に。</p>
       <button class="link-card" data-route="spots"><strong>近くのおすすめ一覧</strong><small>店舗ごとに見る</small><b>›</b></button>
       <nav class="guide-nav" aria-label="お薬と健康のガイド">
-        <button data-route="quiz"><strong>お薬クイズ</strong><small>楽しく学べる100問</small><b>›</b></button>
+        <button data-route="quiz"><strong>お薬クイズ</strong><small>根拠つき・実践22問</small><b>›</b></button>
         <button data-route="labs"><strong>検査値ガイド</strong><small>高い・低いの意味</small><b>›</b></button>
       </nav>
       <section class="number-card">
@@ -36,14 +37,14 @@
     </section>
 
     <section class="view" id="quiz-view">
-      <button class="back" data-route="home">← ホーム</button><div class="pill">全100問</div><div class="hero-icon">💊</div><p class="eyebrow">PHARMACY LESSON</p><h1>お薬クイズ100</h1><p class="lead">1回10問。基礎から、迷いやすい実践問題まで。</p>
-      <p class="notice">✓ 厚労省・PMDAなどの公的資料を参照</p><div id="quiz-start"><h2>挑戦する分野を選んでね</h2><p>「ぜんぶ」では100問からランダムに10問を出題します。</p><div class="chips" id="quiz-categories"></div><button class="primary" id="start-quiz">10問に挑戦する</button></div><div id="quiz-play" hidden></div>
-      <aside><strong>このクイズについて</strong><p>一般的な啓発情報です。実際のお薬は、薬袋・説明書・医師・薬剤師からの指示を優先してください。</p></aside>
+      <button class="back" data-route="home">← ホーム</button><div class="pill">全22問</div><div class="hero-icon">💊</div><p class="eyebrow">PHARMACY LESSON</p><h1>お薬クイズ</h1><p class="lead">1回10問。薬局で本当に迷いやすいことを、根拠と一緒に確認。</p>
+      <p class="notice">✓ PMDA・厚労省の患者向け情報を基に作成</p><div id="quiz-start"><h2>挑戦する分野を選んでね</h2><p>「ぜんぶ」では22問からランダムに10問を出題します。</p><div class="chips" id="quiz-categories"></div><button class="primary" id="start-quiz">10問に挑戦する</button></div><div id="quiz-play" hidden></div>
+      <aside><strong>このクイズについて</strong><p>一般的な啓発情報です。実際のお薬は、薬袋・添付文書・医師・薬剤師からの指示を優先してください。<br><a href="https://www.pmda.go.jp/safety/consultation-for-patients/on-drugs/info/0001.html" target="_blank" rel="noreferrer">PMDA「知っておきたい薬の知識」↗</a><br><a href="https://www.mhlw.go.jp/file/06-Seisakujouhou-11120000-Iyakushokuhinkyoku/0000137153.pdf" target="_blank" rel="noreferrer">厚労省「薬の正しい使い方」↗</a></p></aside>
     </section>
 
     <section class="view" id="labs-view">
       <button class="back" data-route="home">← 受付状況に戻る</button><div class="pill">2026年確認</div><div class="hero-icon">🩺</div><p class="eyebrow">LAB RESULTS GUIDE</p><h1>検査値 かんたんガイド</h1><p class="lead">この数字、なんのこと？ 健診でよく見る項目をやさしく解説します。</p>
-      <aside><strong>まず知っておきたいこと</strong><p>数値は成人の一般的な目安です。基準範囲は検査機関・測定法・年齢・性別などで異なるため、手元の結果票を優先してください。</p></aside>
+      <aside><strong>まず知っておきたいこと</strong><p>数値は成人の一般的な目安です。基準範囲は検査機関・測定法・年齢・性別などで異なるため、手元の結果票を優先してください。各項目をタップすると、高値・低値で考えられる主な要因を見られます。これは診断ではなく、受診・相談の目安にするための情報です。<br><a href="https://www.jccls.org/news/kijyunhani20221001/" target="_blank" rel="noreferrer">JCCLS「共用基準範囲」↗</a><br><a href="https://www.ningen-dock.jp/10606/" target="_blank" rel="noreferrer">日本人間ドック・予防医療学会（血糖判定改訂）↗</a></p></aside>
       <div class="search"><input id="lab-search" type="search" placeholder="検査項目を探す" aria-label="検査項目を探す"><div class="chips" id="lab-categories"></div></div><p><strong id="lab-count"></strong>項目</p><div id="lab-list" class="lab-list"></div>
     </section>
   </main>
